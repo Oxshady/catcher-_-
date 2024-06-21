@@ -1,4 +1,4 @@
-# Keylogger Project
+# Keylogger Project And Simple Malware Detector
 
 This project implements a simple keylogger that captures keystrokes from a client machine and sends them to a server for logging purposes. It utilizes Python for scripting, `pynput` library for capturing keystrokes, and `socket` library for network communication.
 
@@ -8,11 +8,20 @@ This project implements a simple keylogger that captures keystrokes from a clien
 - **Network Communication:** Sends captured keystrokes over the network to a remote server.
 - **Logging:** Logs keystrokes into a text file on the server.
 
+
+### Malware Detector
+The malware detector script analyzes files extracted from a specified archive. It calculates cryptographic hashes of files using various hashing algorithms (MD5, SHA-1, SHA-224, SHA-256, SHA3-384, SHA3-512) and compares them against a list of known malicious hashes. If a match is found, it identifies the file as potentially malicious.
+
+
 ## Requirements
 
 - Python 3.x
 - `pynput` library (for capturing keystrokes)
 - Basic understanding of network sockets
+  - `pathlib`: For handling file paths and directories.
+  - `shutil`: For unpacking archives.
+  - `rarfile` (optional): For handling RAR archives.
+  - `hashlib`: For calculating file hashes using various algorithms.
 
 ## Installation and Setup
 
