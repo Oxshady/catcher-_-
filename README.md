@@ -18,18 +18,24 @@ The malware detector script analyzes files extracted from a specified archive. I
 
 - Python 3.x
 - `pynput` library (for capturing keystrokes)
-- Basic understanding of network sockets
-  - `pathlib`: For handling file paths and directories.
-  - `shutil`: For unpacking archives.
-  - `rarfile` (optional): For handling RAR archives.
-  - `hashlib`: For calculating file hashes using various algorithms.
+- `socket` library (for network communication)
+- `os` module (for operating system related functions)
+- `sqlite3` module (for accessing SQLite databases)
+- `requests` library (for making HTTP requests)
+- `json` module (for JSON data handling)
+- `psutil` library (for system and process utilities)
+- `platform` module (for retrieving system information)
+- `pathlib` module (for handling file paths and directories)
+- `shutil` module (for unpacking archives)
+- `rarfile` library (optional, for handling RAR archives)
+- `hashlib` module (for calculating file hashes using various algorithms)
 
 ## Installation and Setup
 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/Oxshady/catcher--_-.git
+    git clone https://github.com/Oxshady/Keylogger--_-.git
     cd keylogger
     ```
 
@@ -38,6 +44,8 @@ The malware detector script analyzes files extracted from a specified archive. I
     ```bash
     pip install pynput
     ```
+
+    Ensure all required modules (`pathlib`, `shutil`, `rarfile` if used, `hashlib`) are available in your Python environment.
 
 ## Usage
 
@@ -76,7 +84,7 @@ The malware detector script analyzes files extracted from a specified archive. I
 
 ## Acknowledgments
 
-- Thanks to the developers of `pynput` and `socket` libraries for their contributions.
+- Thanks to the developers of `pynput`, `socket`, `sqlite3`, `requests`, `psutil`, `platform`, `pathlib`, `shutil`, `rarfile`, and `hashlib` libraries/modules for their contributions.
 
 ---
 
