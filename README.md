@@ -35,7 +35,7 @@ The malware detector script analyzes files extracted from a specified archive. I
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/Oxshady/Keylogger--_-.git
+    git clone https://github.com/Oxshady/catcher--_-.git
     cd keylogger
     ```
 
