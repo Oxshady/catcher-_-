@@ -1,17 +1,18 @@
 # Keylogger Project And Simple Malware Detector
 
-This project implements a simple keylogger that captures keystrokes from a client machine and sends them to a server for logging purposes. It utilizes Python for scripting, `pynput` library for capturing keystrokes, and `socket` library for network communication.
+This project implements a simple keylogger that captures keystrokes from a client machine and sends them to a server for logging purposes. It also includes features to gather browser data and system information.
 
 ## Features
 
 - **Keylogging:** Captures all keystrokes made on the client machine.
 - **Network Communication:** Sends captured keystrokes over the network to a remote server.
 - **Logging:** Logs keystrokes into a text file on the server.
-
+- **Browser Data Theft:** Gathers saved passwords from browsers like Chrome, Edge, and Firefox.
+- **System Information Gathering:** Collects host name, IP addresses, OS details, processor info, disk usage, and memory statistics.
 
 ### Malware Detector
-The malware detector script analyzes files extracted from a specified archive. It calculates cryptographic hashes of files using various hashing algorithms (MD5, SHA-1, SHA-224, SHA-256, SHA3-384, SHA3-512) and compares them against a list of known malicious hashes. If a match is found, it identifies the file as potentially malicious.
 
+The malware detector script analyzes files extracted from a specified archive. It calculates cryptographic hashes of files using various hashing algorithms (MD5, SHA-1, SHA-224, SHA-256, SHA3-384, SHA3-512) and compares them against a list of known malicious hashes. If a match is found, it identifies the file as potentially malicious.
 
 ## Requirements
 
@@ -28,7 +29,7 @@ The malware detector script analyzes files extracted from a specified archive. I
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/Oxshady/Keylogger--_-.git
+    git clone https://github.com/Oxshady/catcher--_-.git
     cd keylogger
     ```
 
@@ -57,7 +58,7 @@ The malware detector script analyzes files extracted from a specified archive. I
     Modify `client.py` with the IP address and port of your server:
 
     ```python
-    ke = Keylogger("server_ip", "port")  # Replace with your server's IP and port
+    ke = Keylogger("server_ip", 9999)  # Replace with your server's IP and port
     ```
 
 2. **Run the keylogger client script:**
@@ -66,7 +67,7 @@ The malware detector script analyzes files extracted from a specified archive. I
     python client.py
     ```
 
-    This script connects to the specified server and starts capturing keystrokes. All captured keystrokes are sent to the server for logging.
+    This script connects to the specified server and starts capturing keystrokes. It also gathers browser data and system information, sending all collected data to the server for logging.
 
 ## Troubleshooting
 
@@ -76,3 +77,7 @@ The malware detector script analyzes files extracted from a specified archive. I
 ## Acknowledgments
 
 - Thanks to the developers of `pynput` and `socket` libraries for their contributions.
+
+---
+
+Ensure to adjust the IP address, port number, and paths in the scripts (`client.py` and `server.py`) according to your setup. This README provides a comprehensive overview of your keylogger project, including how it captures browser data, system information, and its integration with the malware detector functionality.
