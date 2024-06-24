@@ -41,11 +41,52 @@ The malware detector script analyzes files extracted from a specified archive. I
 
 2. **Install dependencies:**
 
+Ensure you have the following installed and configured in your Python environment:
+
+- **Python 3.x**
+- **pynput** library (for capturing keystrokes)
     ```bash
     pip install pynput
     ```
 
-    Ensure all required modules (`pathlib`, `shutil`, `rarfile` if used, `hashlib`) are available in your Python environment.
+- **socket** 
+    - This is included in Python's standard library, no separate installation required.
+
+- **os** 
+    - This is part of Python's standard library.
+
+- **sqlite3**
+    - This is part of Python's standard library.
+
+- **requests** 
+    ```bash
+    pip install requests
+    ```
+
+- **json** 
+    - This is part of Python's standard library.
+
+- **psutil** 
+    ```bash
+    pip install psutil
+    ```
+
+- **platform** 
+    - This is part of Python's standard library.
+
+- **pathlib** 
+    - This is part of Python's standard library.
+
+- **shutil** 
+    - This is part of Python's standard library.
+
+- **rarfile**
+    ```bash
+    pip install rarfile
+    ```
+
+- **hashlib**
+    - This is part of Python's standard library.
 
 ## Usage
 
@@ -72,7 +113,7 @@ The malware detector script analyzes files extracted from a specified archive. I
 2. **Run the keylogger client script:**
 
     ```bash
-    python client.py
+    python reverseShell.py
     ```
 
     This script connects to the specified server and starts capturing keystrokes. It also gathers browser data and system information, sending all collected data to the server for logging.
@@ -88,4 +129,4 @@ The malware detector script analyzes files extracted from a specified archive. I
 
 ---
 
-Ensure to adjust the IP address, port number, and paths in the scripts (`client.py` and `server.py`) according to your setup. This README provides a comprehensive overview of your keylogger project, including how it captures browser data, system information, and its integration with the malware detector functionality.
+Ensure to adjust the IP address, port number, and paths in the scripts (`reverseShell.py` and `server.py`) according to your setup. This README provides a comprehensive overview of your keylogger project, including how it captures browser data, system information, and its integration with the malware detector functionality.
