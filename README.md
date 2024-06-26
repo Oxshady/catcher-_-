@@ -1,92 +1,48 @@
-# Keylogger Project And Simple Malware Detector
+# simple info stealer Project
 
-This project implements a simple keylogger that captures keystrokes from a client machine and sends them to a server for logging purposes. It also includes features to gather browser data and system information.
+This project consists of a reverse shell implementation with keylogging capabilities. It involves two main components: a client script (`reversShell.py`) that runs on the target machine and sends data back to a server, and a server script (`server.py`) that receives and logs the data sent by the client.
 
 ## Features
 
-- **Keylogging:** Captures all keystrokes made on the client machine.
-- **Network Communication:** Sends captured keystrokes over the network to a remote server.
-- **Logging:** Logs keystrokes into a text file on the server.
-- **Browser Data Theft:** Gathers saved passwords from browsers like Chrome, Edge, and Firefox.
-- **System Information Gathering:** Collects host name, IP addresses, OS details, processor info, disk usage, and memory statistics.
+1. **Socket Communication**:
+   - Establishes a socket connection between the client and the server.
+   - Sends data from the client to the server.
 
-### Malware Detector
+2. **Keylogging**:
+   - Captures keystrokes on the client machine.
+   - Sends captured keystrokes to the server.
 
-The malware detector script analyzes files extracted from a specified archive. It calculates cryptographic hashes of files using various hashing algorithms (MD5, SHA-1, SHA-224, SHA-256, SHA3-384, SHA3-512) and compares them against a list of known malicious hashes. If a match is found, it identifies the file as potentially malicious.
+3. **Clipboard Data**:
+   - Captures clipboard data from the client machine.
+   - Sends clipboard data to the server.
+
+4. **Host Information**:
+   - Gathers detailed information about the host machine, including:
+     - Hostname
+     - Private and public IP addresses
+     - Processor information
+     - Operating system details
+     - Disk usage
+     - Memory usage
+   - Sends host information to the server.
+
+5. **Password Stealing**:
+   - Extracts saved passwords from browsers (Chrome, Edge, Firefox).
+   - Sends extracted passwords to the server.
 
 ## Requirements
 
 - Python 3.x
-- `pynput` library (for capturing keystrokes)
-- `socket` library (for network communication)
-- `os` module (for operating system related functions)
-- `sqlite3` module (for accessing SQLite databases)
-- `requests` library (for making HTTP requests)
-- `json` module (for JSON data handling)
-- `psutil` library (for system and process utilities)
-- `platform` module (for retrieving system information)
-- `pathlib` module (for handling file paths and directories)
-- `shutil` module (for unpacking archives)
-- `rarfile` library (optional, for handling RAR archives)
-- `hashlib` module (for calculating file hashes using various algorithms)
+- Required Python libraries:
+  - `pynput`
+  - `requests`
+  - `psutil`
+  - `pywin32`
 
-## Installation and Setup
+Install the required libraries using pip:
 
-1. **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/Oxshady/catcher--_-.git
-    cd keylogger
-    ```
-
-2. **Install dependencies:**
-
-Ensure you have the following installed and configured in your Python environment:
-
-- **Python 3.x**
-- **pynput** library (for capturing keystrokes)
-    ```bash
-    pip install pynput
-    ```
-
-- **socket** 
-    - This is included in Python's standard library, no separate installation required.
-
-- **os** 
-    - This is part of Python's standard library.
-
-- **sqlite3**
-    - This is part of Python's standard library.
-
-- **requests** 
-    ```bash
-    pip install requests
-    ```
-
-- **json** 
-    - This is part of Python's standard library.
-
-- **psutil** 
-    ```bash
-    pip install psutil
-    ```
-
-- **platform** 
-    - This is part of Python's standard library.
-
-- **pathlib** 
-    - This is part of Python's standard library.
-
-- **shutil** 
-    - This is part of Python's standard library.
-
-- **rarfile**
-    ```bash
-    pip install rarfile
-    ```
-
-- **hashlib**
-    - This is part of Python's standard library.
+```sh
+pip install pynput requests psutil pywin32
 
 ## Usage
 
