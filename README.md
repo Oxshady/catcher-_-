@@ -76,7 +76,6 @@ the reverseshell install the modules
 
 ## Troubleshooting
 
-- **Connection Issues:** Ensure the server and client are running on the same network or have proper network access.
 - **File Permissions:** Ensure the server has write permissions for the `./victim_data.txt` file in the project directory.
 
 ## Acknowledgments
