@@ -41,7 +41,6 @@ This project consists of a reverse shell implementation with keylogging capabili
 
 Install the required libraries using pip:
 
-```sh
 the reverseshell install the modules
 
 ## Usage
